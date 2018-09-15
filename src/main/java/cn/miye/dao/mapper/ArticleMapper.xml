@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.miye.dao.ArticleDao">
+
+	<select id="queryArticle" resultType ="Article">
+		SELECT 
+		MDC_PRO_ARTICLE_ID as mdcProArticleId,
+		TITLE,
+		LANG
+		FROM MDC_PRO_ARTICLE
+		WHERE
+		 <![CDATA[
+		ROWNUM < 100
+		]]>
+	</select>
+	
+</mapper>
